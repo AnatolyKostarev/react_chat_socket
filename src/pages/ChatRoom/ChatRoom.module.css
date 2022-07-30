@@ -1,0 +1,42 @@
+.chat__header {
+  margin-bottom: 54px;
+  padding-top: 54px;
+}
+
+.chat__title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.user__marker {
+  display: inline-block;
+  margin-right: 24px;
+  width: 12px;
+  height: 12px;
+  background: #f1b8ff;
+  border: 0;
+  border-radius: 50%;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.user__name {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: left;
+  color: #fff;
+}
+
+.user__message {
+  margin-left: 36px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  color: #fff;
+}
