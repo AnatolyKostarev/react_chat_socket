@@ -1,0 +1,11 @@
+.footer__text,
+.footer__text a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+}
+
+.footer__text {
+  color: #fff;
+}
