@@ -1,7 +1,9 @@
 import React from "react";
+import clsx from "clsx";
 import s from "./Input.module.css";
 
 export const Input = ({
+  className,
   label,
   type = "text",
   value,
@@ -11,9 +13,9 @@ export const Input = ({
 }) => {
   return (
     <div>
-      <label className={s.label}>{label}</label>
+      <label className={clsx(s.label, className)}>{label}</label>
       <input
-        className={s.input}
+        className={clsx(s.input, className)}
         type={type}
         value={value}
         placeholder={placeholder}
