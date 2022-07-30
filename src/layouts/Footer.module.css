@@ -1,3 +1,7 @@
+.footer {
+  padding-bottom: 67px;
+}
+
 .footer__text,
 .footer__text a {
   font-size: 16px;

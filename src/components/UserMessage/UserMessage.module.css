@@ -1,0 +1,5 @@
+.user__message {
+  display: block;
+  max-width: 414px;
+  list-style: none;
+}
