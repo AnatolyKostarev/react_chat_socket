@@ -1,11 +1,14 @@
 import * as React from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { SignIn } from "./pages/SignIn/SignIn";
 import { LogIn } from "./pages/LogIn/LogIn";
 import { ChatRoom } from "./pages/ChatRoom/ChatRoom";
 
-function App({ userReg = false }) {
-  return userReg ? (
+function App() {
+  const [isAuth, setIsAuth] = useState(false);
+
+  return isAuth ? (
     <>
       <Routes>
         <Route
