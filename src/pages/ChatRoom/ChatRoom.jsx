@@ -244,10 +244,15 @@ export const ChatRoom = ({ title }) => {
               <span className={s.user__marker}></span>
               <p className={s.user__name}>Катенька</p>
               <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage> */}
+            </UserMessage>
           </UsersList>
+          <Form className={s.form__chat} onSubmit={(e) => e.preventDefault()}>
+            <TextArea caption="Ваше сообщение..." />
+            <Button className={s.btn__chat}>Отправить</Button>
+          </Form>
         </Container>
       </Main>
+      <Footer className={s.footer__chat} name="Анатолий" />
     </>
   );
 };
