@@ -27,11 +27,11 @@ export const LogIn = ({ title, link, path, indent }) => {
       <Main>
         <Container>
           <FormHeader title={title} link={link} path={path} indent={indent} />
-          <Form>
+          <Form onSubmit={(e) => e.preventDefault()}>
             <Input label="Никнейм" placeholder="Никнейм" />
             <Input type="password" label="Пароль" placeholder="Пароль" />
+            <Button className={s.btn__login}>Войти</Button>
           </Form>
-          <Button className={s.btn__login}>Войти</Button>
         </Container>
       </Main>
       <Footer name="Анатолий" />

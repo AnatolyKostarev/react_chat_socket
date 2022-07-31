@@ -1,14 +1,18 @@
-.chat__header {
+.header__chat {
   margin-bottom: 54px;
   padding-top: 54px;
 }
 
-.chat__title {
+.title__chat {
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
   letter-spacing: -0.02em;
   text-align: left;
+}
+
+.main__chat {
+  margin-bottom: 35px;
 }
 
 .user__marker {
@@ -39,4 +43,36 @@
   line-height: 28px;
   text-align: left;
   color: #fff;
+}
+
+.users__chat {
+  margin-bottom: 52px;
+}
+
+.form__chat {
+  position: relative;
+  margin-bottom: 0;
+  row-gap: 0;
+}
+
+.btn__chat {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 10px 16px;
+  background: #3f444a;
+  border: 0;
+  border-radius: 4px;
+}
+
+.btn__chat:hover {
+  background: #3f444a;
+}
+
+.btn__chat:focus {
+  outline: 1px solid #575e66;
+}
+
+.footer__chat {
+  padding-bottom: 54px;
 }

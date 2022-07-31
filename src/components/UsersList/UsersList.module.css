@@ -4,7 +4,7 @@
   align-items: flex-start;
   flex-direction: column;
   row-gap: 24px;
-  height: 690px;
+  height: 420px;
   overflow: auto;
   overflow-x: hidden;
 }

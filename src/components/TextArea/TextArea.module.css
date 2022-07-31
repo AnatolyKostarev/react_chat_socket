@@ -1,0 +1,19 @@
+.message__field {
+  padding: 16px 12px 12px 23px;
+  font-family: "Inter", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  color: #abb5be;
+  background: #34383d;
+  border: 1px solid #575e66;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.message__field:focus {
+  outline: 1px solid #575e66;
+}
