@@ -6,20 +6,24 @@ import { DecorationLine } from "../../components/DecorationLine/DecorationLine";
 import { Main } from "../../layouts/Main";
 import { UsersList } from "../../components/UsersList/UsersList";
 import { UserMessage } from "../../components/UserMessage/UserMessage";
+import { Form } from "../../components/Form/Form";
+import { TextArea } from "../../components/TextArea/TextArea";
+import { Footer } from "../../layouts/Footer";
+import { Button } from "../../components/Button/Button";
 import s from "./ChatRoom.module.css";
 
 export const ChatRoom = ({ title }) => {
   return (
     <>
-      <Header className={s.chat__header}>
+      <Header className={s.header__chat}>
         <DecorationLine />
         <Container>
-          <Title className={s.chat__title} caption={title} />
+          <Title className={s.title__chat} caption={title} />
         </Container>
       </Header>
-      <Main>
+      <Main className={s.main__chat}>
         <Container>
-          <UsersList>
+          <UsersList className={s.users__chat}>
             <UserMessage>
               <span className={s.user__marker}></span>
               <p className={s.user__name}>Васек</p>
@@ -40,7 +44,7 @@ export const ChatRoom = ({ title }) => {
               <p className={s.user__name}>Катенька</p>
               <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
             </UserMessage>
-            {/* <UserMessage>
+            <UserMessage>
               <span className={s.user__marker}></span>
               <p className={s.user__name}>Катенька</p>
               <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
