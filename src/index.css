@@ -11,11 +11,13 @@ html::-webkit-scrollbar {
 
 html {
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 
 body {
   font-family: "Inter", Impact, Haettenschweiler, "Arial Narrow Bold",
     sans-serif;
   background: #3f444a;
+  -webkit-user-select: none;
+  user-select: none;
 }
