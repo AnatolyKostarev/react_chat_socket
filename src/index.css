@@ -21,3 +21,9 @@ body {
   -webkit-user-select: none;
   user-select: none;
 }
+
+a {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #c593f0;
+}
