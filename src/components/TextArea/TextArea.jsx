@@ -3,7 +3,6 @@ import clsx from "clsx";
 import s from "./TextArea.module.css";
 
 export const TextArea = ({
-  caption,
   className,
   rows = 5,
   cols = 63,
@@ -21,8 +20,6 @@ export const TextArea = ({
       maxLength="500"
       onChange={onChange}
       value={value}
-    >
-      {caption}
-    </textarea>
+    ></textarea>
   );
 };

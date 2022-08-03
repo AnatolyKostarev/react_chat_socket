@@ -14,7 +14,7 @@ import { Button } from "../../components/Button/Button";
 import s from "./ChatRoom.module.css";
 
 export const ChatRoom = ({ title }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("Ваше сообщение...");
   return (
     <>
       <Header className={s.header__chat}>
@@ -64,7 +64,6 @@ export const ChatRoom = ({ title }) => {
           </UsersList>
           <Form className={s.form__chat} onSubmit={(e) => e.preventDefault()}>
             <TextArea
-              caption="Ваше сообщение..."
               value={value}
               onChange={(e) => setValue(e.target.value)}
             />
