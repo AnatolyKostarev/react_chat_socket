@@ -33,21 +33,18 @@ export const SignIn = ({ setIsAuth }) => {
             indent={show ? 14 : 27}
             onClick={() => setShow(!show)}
           />
-          {show ? (
-            <Form onSubmit={(e) => e.preventDefault()}>
-              <Input label="Никнейм" placeholder="Никнейм" />
-              <Input type="password" label="Пароль" placeholder="Пароль" />
-              <Button className={s.btn__sign}>Зарегистрироваться</Button>
-            </Form>
-          ) : (
-            <Form onSubmit={(e) => e.preventDefault()}>
-              <Input label="Никнейм" placeholder="Никнейм" />
-              <Input type="password" label="Пароль" placeholder="Пароль" />
-              <Button className={s.btn__login} onClick={() => setIsAuth(true)}>
-                Войти
-              </Button>
-            </Form>
-          )}
+          <Form onSubmit={(e) => e.preventDefault()}>
+            <Input label="Никнейм" placeholder="Никнейм" />
+            <Input type="password" label="Пароль" placeholder="Пароль" />
+            <Button
+              className={show ? s.btn__sign : s.btn__login}
+              onClick={
+                show ? () => alert("Регистрация") : () => setIsAuth(true)
+              }
+            >
+              {show ? "Зарегистрироваться" : "Войти"}
+            </Button>
+          </Form>
         </Container>
       </Main>
       <Footer name="Анатолий" />
