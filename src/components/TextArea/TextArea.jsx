@@ -8,6 +8,8 @@ export const TextArea = ({
   rows = 5,
   cols = 63,
   autoComplete = "off",
+  onChange,
+  value,
 }) => {
   return (
     <textarea
@@ -17,6 +19,8 @@ export const TextArea = ({
       autoComplete={autoComplete}
       minLength="20"
       maxLength="500"
+      onChange={onChange}
+      value={value}
     >
       {caption}
     </textarea>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Container } from "../../components/Container/Container";
 import { Title } from "../../components/Title/Title";
 import { Header } from "../../layouts/Header";
@@ -13,6 +14,7 @@ import { Button } from "../../components/Button/Button";
 import s from "./ChatRoom.module.css";
 
 export const ChatRoom = ({ title }) => {
+  const [value, setValue] = useState("");
   return (
     <>
       <Header className={s.header__chat}>
@@ -59,199 +61,13 @@ export const ChatRoom = ({ title }) => {
               <p className={s.user__name}>Катенька</p>
               <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
             </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
-            <UserMessage>
-              <span className={s.user__marker}></span>
-              <p className={s.user__name}>Катенька</p>
-              <p className={s.user__message}>По фактам, АБАЖАЮ его ❤️</p>
-            </UserMessage>
           </UsersList>
           <Form className={s.form__chat} onSubmit={(e) => e.preventDefault()}>
-            <TextArea caption="Ваше сообщение..." />
+            <TextArea
+              caption="Ваше сообщение..."
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
             <Button className={s.btn__chat}>Отправить</Button>
           </Form>
         </Container>

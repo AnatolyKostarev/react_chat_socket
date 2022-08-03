@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "../../layouts/Header";
 import { Main } from "../../layouts/Main";
 import { Footer } from "../../layouts/Footer";
@@ -11,7 +11,8 @@ import { Input } from "../../components/Input/Input";
 import { Button } from "../../components/Button/Button";
 import s from "./SignIn.module.css";
 
-export const SignIn = ({ title, link, path, indent }) => {
+export const SignIn = ({ setIsAuth }) => {
+  const [show, setShow] = useState(true);
   return (
     <>
       <Header>
@@ -26,12 +27,27 @@ export const SignIn = ({ title, link, path, indent }) => {
       </Header>
       <Main>
         <Container>
-          <FormHeader title={title} link={link} path={path} indent={indent} />
-          <Form onSubmit={(e) => e.preventDefault()}>
-            <Input label="Никнейм" placeholder="Никнейм" />
-            <Input type="password" label="Пароль" placeholder="Пароль" />
-            <Button className={s.btn__sign}>Зарегистрироваться</Button>
-          </Form>
+          <FormHeader
+            title={show ? "Регистрация" : "Войти"}
+            link={!show ? "Регистрация" : "Войти"}
+            indent={show ? 14 : 27}
+            onClick={() => setShow(!show)}
+          />
+          {show ? (
+            <Form onSubmit={(e) => e.preventDefault()}>
+              <Input label="Никнейм" placeholder="Никнейм" />
+              <Input type="password" label="Пароль" placeholder="Пароль" />
+              <Button className={s.btn__sign}>Зарегистрироваться</Button>
+            </Form>
+          ) : (
+            <Form onSubmit={(e) => e.preventDefault()}>
+              <Input label="Никнейм" placeholder="Никнейм" />
+              <Input type="password" label="Пароль" placeholder="Пароль" />
+              <Button className={s.btn__login} onClick={() => setIsAuth(true)}>
+                Войти
+              </Button>
+            </Form>
+          )}
         </Container>
       </Main>
       <Footer name="Анатолий" />

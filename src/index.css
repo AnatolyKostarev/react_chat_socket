@@ -19,9 +19,3 @@ body {
     sans-serif;
   background: #3f444a;
 }
-
-a {
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  color: #c593f0;
-}
