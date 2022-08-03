@@ -13,6 +13,17 @@ import s from "./SignIn.module.css";
 
 export const SignIn = ({ setIsAuth }) => {
   const [show, setShow] = useState(true);
+
+  function signIn(e) {
+    e.preventDefault();
+    alert("Reg");
+  }
+
+  function logIn(e) {
+    e.preventDefault();
+    setIsAuth(true);
+    alert("Log");
+  }
   return (
     <>
       <Header>
@@ -33,15 +44,10 @@ export const SignIn = ({ setIsAuth }) => {
             indent={show ? 14 : 27}
             onClick={() => setShow(!show)}
           />
-          <Form onSubmit={(e) => e.preventDefault()}>
+          <Form onSubmit={show ? (e) => signIn(e) : (e) => logIn(e)}>
             <Input label="Никнейм" placeholder="Никнейм" />
             <Input type="password" label="Пароль" placeholder="Пароль" />
-            <Button
-              className={show ? s.btn__sign : s.btn__login}
-              onClick={
-                show ? () => alert("Регистрация") : () => setIsAuth(true)
-              }
-            >
+            <Button className={show ? s.btn__sign : s.btn__login}>
               {show ? "Зарегистрироваться" : "Войти"}
             </Button>
           </Form>
