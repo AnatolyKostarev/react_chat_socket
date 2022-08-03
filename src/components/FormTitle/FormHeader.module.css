@@ -16,4 +16,8 @@
   font-weight: 400;
   line-height: 28px;
   text-align: left;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #c593f0;
+  cursor: pointer;
 }
