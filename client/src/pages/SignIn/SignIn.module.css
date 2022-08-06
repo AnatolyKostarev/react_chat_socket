@@ -1,7 +1,27 @@
+.btn_info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 24px;
+}
+
 .btn__sign {
   padding: 15px 26px 14px;
 }
 
 .btn__login {
   padding: 15px 51px 14px 50px;
+}
+
+.btn__sign:disabled,
+.btn__login:disabled {
+  cursor: not-allowed;
+}
+
+.status_info {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: left;
+  color: #fff;
 }

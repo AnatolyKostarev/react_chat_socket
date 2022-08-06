@@ -4,11 +4,18 @@ import { SignIn } from "./pages/SignIn/SignIn";
 import { ChatRoom } from "./pages/ChatRoom/ChatRoom";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(Boolean(localStorage.getItem("token")));
+  const [userId, setUserId] = useState();
+
+  function handleAuth({ userId, token }) {
+    setIsAuth(true);
+    setUserId(userId);
+    localStorage.setItem("token", token);
+  }
   return (
     <>
       {!isAuth ? (
-        <SignIn setIsAuth={setIsAuth} />
+        <SignIn onAuth={handleAuth} />
       ) : (
         <ChatRoom title="Общая комната" />
       )}
