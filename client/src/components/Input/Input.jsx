@@ -10,6 +10,7 @@ export const Input = ({
   onChange,
   placeholder = "",
   autocomplete = "off",
+  disabled,
 }) => {
   return (
     <div>
@@ -21,6 +22,8 @@ export const Input = ({
         placeholder={placeholder}
         autoComplete={autocomplete}
         onChange={onChange}
+        required
+        disabled={disabled}
       />
     </div>
   );
