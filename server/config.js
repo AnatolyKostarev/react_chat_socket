@@ -1,5 +1,6 @@
-// разрешенный источник
-export const ALLOWED_ORIGIN = "http://localhost:3000";
-// адрес БД
 export const MONGODB_URI =
-  "mongodb+srv://user_app_chat:Wu8pxZi5.frTe_N@cluster0.kamexwk.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://Artyom:12345@cluster0.uam80bl.mongodb.net/app?retryWrites=true&w=majority";
+
+export const JWT_SECRET = "socket chat";
+
+export const ALLOWED_ORIGIN = "http://localhost:5000";
