@@ -11,19 +11,74 @@ import { Input } from "../../components/Input/Input";
 import { Button } from "../../components/Button/Button";
 import s from "./SignIn.module.css";
 
-export const SignIn = ({ setIsAuth }) => {
-  const [show, setShow] = useState(true);
+function getData(path, params) {
+  const HOST = "http://localhost:5000/api/auth/";
+  return fetch(`${HOST}${path}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    ...params,
+  }).then((res) => res.json());
+}
 
-  function signIn(e) {
-    e.preventDefault();
-    alert("Reg");
+export const SignIn = ({ onAuth }) => {
+  const [isRegistration, setIsRegistration] = useState(true);
+  const [nickName, setNickName] = useState("");
+  const [password, setPassword] = useState("");
+  const [status, setStatus] = useState("original");
+  const [error, setError] = useState(null);
+
+  const params = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name: nickName, password }),
+  };
+
+  async function register(e) {
+    e?.preventDefault();
+    setError(null);
+    setStatus("loading");
+    const data = await getData("register", params);
+
+    if (data?.type === "error") {
+      setStatus("error");
+      setError(data.message);
+    }
+
+    if (data?.type === "success") {
+      setStatus("done");
+      setIsRegistration(false);
+      login();
+    }
+    setNickName("");
+    setPassword("");
   }
 
-  function logIn(e) {
-    e.preventDefault();
-    setIsAuth(true);
-    alert("Log");
+  async function login(e) {
+    e?.preventDefault();
+    setError(null);
+    setStatus("loading");
+    const data = await getData("login", params);
+
+    if (data?.type === "error") {
+      setStatus("error");
+      setError(data.message);
+    }
+
+    if (data?.type === "success") {
+      onAuth({
+        token: data.token,
+        userId: data.userId,
+      });
+      setStatus("done");
+    }
+    setNickName("");
+    setPassword("");
   }
+
   return (
     <>
       <Header>
@@ -39,17 +94,41 @@ export const SignIn = ({ setIsAuth }) => {
       <Main>
         <Container>
           <FormHeader
-            title={show ? "Регистрация" : "Войти"}
-            link={!show ? "Регистрация" : "Войти"}
-            indent={show ? 14 : 27}
-            onClick={() => setShow(!show)}
+            title={isRegistration ? "Регистрация" : "Войти"}
+            link={!isRegistration ? "Регистрация" : "Войти"}
+            indent={isRegistration ? 14 : 27}
+            onClick={() => setIsRegistration(!isRegistration)}
           />
-          <Form onSubmit={show ? (e) => signIn(e) : (e) => logIn(e)}>
-            <Input label="Никнейм" placeholder="Никнейм" />
-            <Input type="password" label="Пароль" placeholder="Пароль" />
-            <Button className={show ? s.btn__sign : s.btn__login}>
-              {show ? "Зарегистрироваться" : "Войти"}
-            </Button>
+          <Form onSubmit={isRegistration ? register : login}>
+            <Input
+              label="Никнейм"
+              value={nickName}
+              onChange={(e) => setNickName(e.target.value.trim())}
+              placeholder="Никнейм"
+              disabled={status === "loading"}
+            />
+            <Input
+              type="password"
+              label="Пароль"
+              value={password}
+              onChange={(e) => setPassword(e.target.value.trim())}
+              placeholder="Пароль"
+              autocomplete="current-password"
+              disabled={status === "loading"}
+            />
+            <div className={s.btn_info}>
+              <Button
+                className={isRegistration ? s.btn__sign : s.btn__login}
+                disabled={status === "loading"}
+              >
+                {isRegistration ? "Зарегистрироваться" : "Войти"}
+              </Button>
+              <p className={s.status_info}>
+                {status === "loading" && "Авторизация..."}
+                {status === "error" &&
+                  (error ?? "Что-то пошло не так, попробуй еще раз 😞")}
+              </p>
+            </div>
           </Form>
         </Container>
       </Main>
