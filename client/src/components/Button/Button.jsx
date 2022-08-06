@@ -2,12 +2,23 @@ import React from "react";
 import clsx from "clsx";
 import s from "./Button.module.css";
 
-export const Button = ({ className, children, onClick, type = "submit" }) => {
+export const Button = ({
+  className,
+  children,
+  onClick,
+  type = "submit",
+  disabled,
+}) => {
   return (
-    <div>
-      <button className={clsx(s.btn, className)} type={type} onClick={onClick}>
+    <>
+      <button
+        className={clsx(s.btn, className)}
+        type={type}
+        onClick={onClick}
+        disabled={disabled}
+      >
         {children}
       </button>
-    </div>
+    </>
   );
 };
